@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Image to LCD </title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Hind:wght@400;700&amp;display=swap'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<input type="checkbox" id="toggle" name="toggle" value="Toggle Image Panel" checked>
+<aside>
+	<label class="toggle-btn" for="toggle">
+		<span class="sr">Toggle Image Panel</span>
+	</label>
+	<form action="">
+		<label for="img_upload">Image</label>
+		<div class="upload-btn">
+			<input id="img_upload" name="img_upload" type="file" accept="image/*">
+			<button type="button" for="img_upload" tabindex="-1">Upload</button>
+			<input id="img_name" name="img_name" type="text" placeholder="No file selected" disabled>
+		</div>
+		<button name="reset_camera" type="button">Reset Camera</button>
+	</form>
+</aside>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js'></script>
+<script src='https://rawgit.com/mrdoob/three.js/r125/examples/js/utils/BufferGeometryUtils.js'></script>
+<script src='https://codepen.io/jkantner/pen/abBdPYe.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

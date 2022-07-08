@@ -1,0 +1,150 @@
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root {
+	font-size: calc(16px + (24 - 16) * (100vw - 320px) / (2560 - 320));
+	--buttonBg: #2762f3;
+	--buttonHoverBg: #0c48db;
+	--formBg: #fff;
+	--inputBorder: #abafba;
+	--inputBg: #fff;
+	--inputDisableBg: #e3e4e8;
+	--pColor: #17181c;
+	--toggleBg: #e3e4e8;
+	--toggleBgHover: #c7cad1;
+}
+body, button, input {
+	color: var(--pColor);
+	font: 1em/1.5 "Hind", system-ui, -apple-system, sans-serif;
+}
+body {
+	overflow: hidden;
+}
+aside, button, input, .upload-btn input[type=file] {
+	width: 100%;
+}
+aside, input[name=toggle] {
+	position: fixed;
+	left: 0;
+}
+aside {
+	background: var(--formBg);
+	bottom: 0;
+	transform: translateY(calc(100% - 1.5em));
+	transition: transform 0.2s ease-in;
+}
+form {
+	padding: 1.5em 1.5em 0 1.5em;
+}
+button, input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+button, input[type=file], .toggle-btn {
+	cursor: pointer;
+}
+button:hover, button:focus, input[type=file]:hover + button, input[type=file]:focus + button {
+	background: var(--buttonHoverBg);
+}
+button {
+	background: var(--buttonBg);
+	border-radius: 0.375em;
+	color: #fff;
+	display: block;
+	margin-bottom: 1.5em;
+	padding: 0.75em 1em;
+	transition: background 0.1s linear;
+}
+input, label, .toggle-btn:before {
+	display: block;
+}
+input, input[type=file] + button, .upload-btn {
+	margin-bottom: 0.75em;
+}
+input {
+	background: var(--inputBg);
+	border-radius: 0.25em;
+	box-shadow: 0 0 0 1px var(--inputBorder) inset;
+	padding: 0.75em;
+}
+input:disabled {
+	background: var(--inputDisableBg);
+	cursor: not-allowed;
+	text-overflow: ellipsis;
+}
+input[name=toggle] {
+	top: -1.5em;
+}
+input[name=toggle]:checked + aside {
+	transform: translateY(0);
+}
+label {
+	font-weight: bold;
+}
+canvas {
+	cursor: move;
+}
+.toggle-btn, .upload-btn {
+	position: relative;
+}
+.toggle-btn:before, .upload-btn input[type=file] {
+	position: absolute;
+}
+.toggle-btn {
+	background: var(--toggleBg);
+	text-align: center;
+}
+.toggle-btn:before {
+	content: "";
+	top: 33%;
+	left: calc(50% - 0.5em);
+	width: 0; 
+	height: 0; 
+	border-left: 0.5em solid transparent;
+	border-right: 0.5em solid transparent;
+	border-bottom: 0.5em solid;
+}
+input[name=toggle]:checked + aside .toggle-btn:before {
+	border-top: 0.5em solid;
+	border-bottom: 0;
+}
+.toggle-btn:hover, input[name=toggle]:focus + aside .toggle-btn {
+	background: var(--toggleBgHover);
+}
+.upload-btn, .sr {
+	overflow: hidden;
+}
+.upload-btn input[type=file] {
+	padding-top: 2.5em;
+	opacity: 0;
+	top: 0;
+	left: 0;
+	height: 3em;
+}
+.sr {
+	display: inline-block;
+	width: 1px;
+	height: 1px;
+}
+
+/* Queries */
+@media screen and (min-width: 768px) {
+	aside {
+		width: 20em;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		--formBg: #3a3d46;
+		--inputBg: #2e3138;
+		--inputDisableBg: #2e3138;
+		--inputBorder: #2e3138;
+		--pColor: #e3e4e8;
+		--toggleBg: #17181c;
+		--toggleBgHover: #0c0c0e
+	}
+}
